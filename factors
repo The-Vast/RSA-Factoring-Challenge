@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+
+from sys import argv
+
+def factors(num):
+    n = 2
+    while num % n != 0:
+        n += 1
+    return n
+
+f = open(argv[1], 'r')
+for x in f:
+    num = int(" ".join(x.split()))
+    denum = factors(num)
+    #print(num, denum)
+    print("{}={}*{}".format(num, num//denum, denum))
+f.close()
