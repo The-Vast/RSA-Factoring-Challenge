@@ -8,10 +8,10 @@ def factors(num):
         n += 1
     return n
 
-f = open(argv[1], 'r')
-for x in f:
-    num = int(" ".join(x.split()))
-    denum = factors(num)
+with open(argv[1], 'r') as f:
+    for x in f:
+    #num = int(" ".join(x.split()))
+        num = int(x)
+        denum = factors(num)
     #print(num, denum)
-    print("{}={}*{}".format(num, num//denum, denum))
-f.close()
+        print("{}={}*{}".format(num, num//denum, denum))
